@@ -38,7 +38,7 @@ import requests
 JELLYFIN_URL = 'http://localhost:8096' # To be changed !
 #It has to be the admin user to be sure it works
 USERNAME = 'username'
-PASSWORD = 'pass'
+PASSWORD = 'password'
 
 
 #set 0 to do all the files in the Jellyfin server
@@ -246,7 +246,6 @@ for serie_item in series_items:
     for season_item in seasons_items:
         print(season_item)
         episodes_items = search_episodes(season_item["id"])
-        #update episodes tags
         languages_episodes_tags = update_tags(episodes_items)
         for lang_tag in languages_episodes_tags:
             if lang_tag not in languages:
@@ -267,7 +266,3 @@ for serie_item in series_items:
 # metadata = get_more_infos("03b1adfdb870388372dcfa3c40720090")
 # language_array = get_audio_languages(metadata["Id"])
 # print(language_array)
-
-    
-        
-        
