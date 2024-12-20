@@ -215,23 +215,23 @@ def search_episodes(season_id):
 
 ## Process Movies
 
-# movie_count = get_count("Movie")
-# print(f"Movie count: {movie_count}")
-# number_to_proceed = STOP_AT if STOP_AT != 0 else movie_count
-# is_process_ended = False
-# next_start = 0
-# while not is_process_ended:
-#     print(f"Processing {next_start} to {next_start+NUMBER_PER_BATCH}")
-#     items = search_items_movie(next_start,NUMBER_PER_BATCH)
-#     if VERBOSE:
-#         print(items)
-#     if len(items) < NUMBER_PER_BATCH or number_to_proceed <= 0:
-#         is_process_ended = True
-#         print("Last batch!")
-#     update_tags(items)
-#     number_to_proceed = number_to_proceed - NUMBER_PER_BATCH
-#     next_start = next_start + NUMBER_PER_BATCH
-# print ("Process completed.")
+movie_count = get_count("Movie")
+print(f"Movie count: {movie_count}")
+number_to_proceed = STOP_AT if STOP_AT != 0 else movie_count
+is_process_ended = False
+next_start = 0
+while not is_process_ended:
+    print(f"Processing {next_start} to {next_start+NUMBER_PER_BATCH}")
+    items = search_items_movie(next_start,NUMBER_PER_BATCH)
+    if VERBOSE:
+        print(items)
+    if len(items) < NUMBER_PER_BATCH or number_to_proceed <= 0:
+        is_process_ended = True
+        print("Last batch!")
+    update_tags(items)
+    number_to_proceed = number_to_proceed - NUMBER_PER_BATCH
+    next_start = next_start + NUMBER_PER_BATCH
+print ("Process completed.")
 
 
 ## Process Series
